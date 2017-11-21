@@ -13,3 +13,9 @@
 
 - `babel-loader`使用babel配置转码js代码。
 - `bundle-loader`结合react-router v4做react代码分割。
+- `style-loader` `css-loader` 加载 CSS 需要 **css-loader** 和 **style-loader**，他们做两件不同的事情，**css-loader**会遍历 CSS 文件，然后找到 `url()` 表达式然后处理他们，**style-loader** 会把原来的 CSS 代码插入页面中的一个 style 标签中。
+
+
+
+https://webpack.js.org/loaders/less-loader/
+

@@ -29,7 +29,12 @@ const routes = [
 ];
 export default class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.abc=new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve("hello world!")
+      },500)
+    });
   }
 
   render() {
