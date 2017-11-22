@@ -1,11 +1,11 @@
 /**
  * Created by wanli on 2017/11/17.
  */
-var express = require('express');
-var app = express()
-app.use(express.static('browser'));
-app.get('*', function (req, res) {
-  res.send(`<!DOCTYPE html>
+var express = require("express");
+var app = express();
+app.use(express.static("browser"));
+app.get("*", function (req, res) {
+	res.send(`<!DOCTYPE html>
             <html lang="en">
             <head>
               <meta charset="UTF-8">
@@ -15,7 +15,7 @@ app.get('*', function (req, res) {
               <div id="app"></div>
               <script src="/dist/index.bundle.js"></script>
             </body>
-            </html>`)
+            </html>`);
 });
 
 app.listen(3000);
