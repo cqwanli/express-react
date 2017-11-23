@@ -14,21 +14,27 @@ module.exports = {
 		publicPath: "/dist/"
 	},
 	module: {
-		rules: [
-			{test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"},
-			{
-				test: /\.bundle\.js$/,
-				use: "bundle-loader"
-			},
-			{
-				test: /\.less$/,
-				use: [
-					{loader: "style-loader"},
-					{loader: "css-loader"}, 
-					{loader: "less-loader"},
-					{loader: "postcss-loader"}
-				]
-			}
+		rules: [{
+			test: /\.jsx?$/,
+			exclude: /node_modules/,
+			use: [
+				{loader:  "babel-loader"},
+				{loader: "eslint-loader"}
+			],
+		},
+		{
+			test: /\.bundle\.js$/,
+			use: "bundle-loader"
+		},
+		{
+			test: /\.less$/,
+			use: [
+				{loader: "style-loader"},
+				{loader: "css-loader"},
+				{loader: "less-loader"},
+				{loader: "postcss-loader"}
+			]
+		}
 		]
 	}
 };
