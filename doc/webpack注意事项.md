@@ -33,7 +33,7 @@ https://webpack.js.org/loaders/less-loader/
   		})
   ```
 
-- ​
+- `OccurrenceOrderPlugin` 通过模块调用次数给模块分配ids，常用的ids就会分配更短的id，使ids可预测，减小文件大小，推荐使用。用法 `new webpack.optimize.OccurrenceOrderPlugin(true)`
 
 #### webpack-merge
 

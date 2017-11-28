@@ -12,6 +12,7 @@ module.exports = merge(common, {
 				NODE_ENV: "\"production\""
 			}
 		}),
+		new webpack.optimize.OccurrenceOrderPlugin(true),
 		new UglifyJSPlugin()
 	]
 });
