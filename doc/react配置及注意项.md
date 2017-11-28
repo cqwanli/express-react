@@ -21,4 +21,5 @@
 
 
 - 异步引用模块`bundle-loader?lazy&name=xxxx!./xxxx`  *lazy*设置懒加载，*name*设置模块别名。
+- react有 `production` `development`两种开发模式。开发模式下有很多帮助调试的提示信息，在打包的时候可以使用webpack的 `DefinePlugin`设置为生产模式去掉提示语信息。
 

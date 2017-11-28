@@ -17,6 +17,29 @@
 - `postcss-loader` 用于支持auto-profixer
 
 
-
 https://webpack.js.org/loaders/less-loader/
 
+#### plugins
+
+- `UglifyJSPlugin`用于压缩js、css文件，通常用于生产环境的打包
+
+- `DefinePlugin`设置打包模式
+
+  ```javascript
+  	new webpack.DefinePlugin({
+  			"process.env": {
+  				NODE_ENV: "\"production\""
+  			}
+  		})
+  ```
+
+- ​
+
+#### webpack-merge
+
+> 用于处理webpack开发环境，生产环境配置。使用 `npm install --save-dev webpack-merge`安装。
+
+配置步骤如下：
+
+1. 在项目根目录下创建 `webpack.common.js` `webpack.prod.js` `webpack.dev.js` 。
+2. 删除 `webpack.config.js`文件。
