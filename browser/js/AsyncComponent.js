@@ -1,38 +1,34 @@
-/**
- * Created by wanli on 2017/11/20.
- */
-import React from "react";
-export const asyncComponent = loadComponent => (
-	class AsyncComponent extends React.Component {
+import React, { Component } from "react";
+
+export default function asyncComponent(importComponent) {
+
+	class AsyncComponent extends Component {
+
 		constructor(props) {
 			super(props);
+
 			this.state = {
-				Component: null,
+				component: null,
 			};
 		}
 
-		componentWillMount() {
-			if (this.hasLoadedComponent()) {
-				return;
-			}
+		async componentDidMount() {
+			const { default: component } = await importComponent();
 
-			loadComponent()
-				.then(module => module.default)
-				.then((Component) => {
-					this.setState({Component});
-				})
-				.catch((err) => {
-					throw err;
-				});
-		}
-
-		hasLoadedComponent() {
-			return this.state.Component !== null;
+			this.setState({
+				component: component
+			});
 		}
 
 		render() {
-			const {Component} = this.state;
-			return (Component) ? <Component {...this.props} /> : null;
+			const C = this.state.component;
+
+			return C
+				? <C {...this.props} />
+				: null;
 		}
+
 	}
-);
+
+	return AsyncComponent;
+}

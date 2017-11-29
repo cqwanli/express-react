@@ -3,20 +3,9 @@
  */
 import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import loadAbout from "bundle-loader?lazy&name=about!./About";
-import loadDashboard from "bundle-loader?lazy&name=dashboard!./Dashboard";
-import Bundle from "./Bundle";
-const About = (props) => (
-	<Bundle load={loadAbout}>
-		{(About) => <About {...props}/>}
-	</Bundle>
-);
-
-const Dashboard = (props) => (
-	<Bundle load={loadDashboard}>
-		{(Dashboard) => <Dashboard {...props}/>}
-	</Bundle>
-);
+import asyncComponent from "./AsyncComponent";
+const About = asyncComponent(() => import("./About"));
+const Dashboard = asyncComponent(() => import("./Dashboard"));
 const routes = [
 	{
 		path: "/about",
