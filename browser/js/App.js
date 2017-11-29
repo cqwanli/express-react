@@ -51,7 +51,7 @@ export default class App extends React.Component {
 					<hr/>
 					{
 						routes.map((route, i) => (
-							<Route path={route.path} component={route.component}/>
+							<Route key={i} path={route.path} component={route.component}/>
 						))
 					}
 				</div>
