@@ -22,6 +22,11 @@
   eslint "src/**/*.js" --cache --cache-location "/Users/user/.eslintcache/"
   ```
 
+#### 本地rules配置
+
+- `"linebreak-style": 0` 设置不检测换行符。（macOS、linux、windows的换行符不一样）
+- `"parser": "babel-eslint"` 设置支持es6部分特殊的语法，如webpack的 `inport()` 异步加载。
+
 #### eslint集成
 
 ##### eslint集成到webstorm
